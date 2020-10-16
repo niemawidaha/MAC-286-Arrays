@@ -1,0 +1,92 @@
+
+Chapter 2: Arrays:
+
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        long[] arr; // reference
+
+        arr = new long[100];
+        int nelems = 0;  // num of items
+        int j;
+        long searchKey; // key of item to search for
+
+        // --------------------------------------------------------
+        arr[0] = 77;                 // insert 10 items
+        arr[1] = 77;
+        arr[2] = 77;
+        arr[3] = 25;
+        arr[4] = 55;
+        arr[5] = 77;
+        nelems = 6;
+        // --------------------------------------------------------
+
+        // display items:
+        for (j = 0; j < nelems; j++) {
+            System.out.println(arr[j] + " ");
+        }
+        // --------------------------------------------------------
+
+        // find item with key 25
+            // for each element,
+            // found item?
+            // yes, exit before end
+            // at the end?
+
+        searchKey = 25;
+
+        // search for item in array
+        for(j = 0; j < nelems; j++ ){
+
+            if(arr[j] == searchKey){
+                break; // items inside the array
+            }
+        }
+
+        // the only way that j would be equal to nelems is if the for loop iterated through
+        // every possible entry in the array and wasnt able to locate the searchKey within
+        // so it reached it's length of time
+        if(j == nelems){
+            System.out.println("Your item was not found in the array\n");
+        } else {
+            System.out.println("Found: " + searchKey + "\n");
+        }
+        // --------------------------------------------------------
+
+        // delete item with key 55
+        // first look for it
+        searchKey = 55;
+
+        for(j = 0; j < nelems; j++){
+            if(arr[j] == searchKey){
+
+                // item was found:
+                // now j holds the value of the index of where it broke:
+                break;
+            }
+        }
+
+        System.out.println("We've found: "+ searchKey + "\n");
+
+        // starting from the index that you want to skip:
+        for(int k = j; k < nelems; k++){
+
+            // start at K and change it to the value to it's right:
+            arr[k] = arr[k+1];
+        }
+        nelems--; // decrease the array for the current value
+
+        // --------------------------------------------------------
+        // DISPLAY ITEMS:
+        for(j = 0; j < nelems; j++){
+            System.out.println(arr[j] + " ");
+        }
+
+    } // ends main()
+}
+
+
+----------------------------------------------------------------------
